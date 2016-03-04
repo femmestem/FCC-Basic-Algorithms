@@ -3,7 +3,7 @@ function where(arr, num) {
     arr = arr.sort(function(a, b) {
         return a - b;
     });
-    console.log(arr);
+    // console.log(arr);
     // iterate over sorted arr
     for (var i=0, l=arr.length; i<l; i++) {
         // - if num is larger, then continue
@@ -12,9 +12,10 @@ function where(arr, num) {
             console.log(i);
             return i;
         }
-        // - if num is smaller than last index, return i + 1
-        // [insert code]
     }
+    // - if num is smaller than last index, return incremented i
+    return i;
+
     function isGreater(control, candidate) {
         // compare num to item at index
         return control <= candidate;
