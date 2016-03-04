@@ -3,9 +3,19 @@
 // Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
 
 function rot13(str) {
+    var decodedStr = "";
+    var char;
     // Char Codes
     // "A" - "Z" : 65 - 90
     // Iterate over characters of the string input
+    for (i=0, l=str.length; i<l; i++) {
+        var charCode = str.charCodeAt(i);
+        if( charCode < 65 || charCode > 90 ) {
+            decodedStr += str[i];
+        } else {
+            decodedStr += String.fromCharCode(calcShift(charCode));
+        }
+    }
     // If the char is not an alphabet char, push/concat the char*
     // Else If the char is an alphabet character
     // - Find the char code of the char and subtract 13;
@@ -15,8 +25,11 @@ function rot13(str) {
     // - *Note: strings are immutable;
     // -- Option 1: Push new char to array and return a joined str
     // -- Option 2: Concat letters to a string on each iteration
-    
-    return str;
+    function calcShift () {
+    }
+
+    console.log(decodedStr);
+    return decodedStr;
 }
 
 // Change the inputs below to test
